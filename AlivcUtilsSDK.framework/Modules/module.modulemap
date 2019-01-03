@@ -1,0 +1,6 @@
+framework module AlivcUtilsSDK {
+  umbrella header "AlivcUtilsSDK.h"
+
+  export *
+  module * { export * }
+}

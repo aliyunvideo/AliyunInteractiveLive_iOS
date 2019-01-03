@@ -1,0 +1,6 @@
+framework module AlivcInteractiveWidgetSDK {
+  umbrella header "AlivcInteractiveWidgetSDK.h"
+
+  export *
+  module * { export * }
+}
