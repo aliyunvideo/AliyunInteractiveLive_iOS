@@ -261,7 +261,7 @@
                completion:(void (^)(AlivcLiveError *error))completion;
 
 /**
- 踢出房间（主播端接口）
+ 踢出房间
  Kick out user
  
  @param userId 被踢用户id
@@ -274,7 +274,7 @@
 - (void)kickout:(NSString *)userId userData:(NSString *)userData duration:(NSUInteger)duration completion:(void (^)(AlivcLiveError *error))completion;
 
 /**
- 解除踢出（主播端接口）
+ 解除踢出
  Cancel Kickout user
  注意：被解除踢出的用户可以立刻进入直播间
  

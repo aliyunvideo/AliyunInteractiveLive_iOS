@@ -363,7 +363,6 @@ AlivcLivePusherSnapshotDelegate;
  */
 - (int)setBeautyBuffing:(int)value;
 
-
 /**
  设置美颜 红润度
  
@@ -372,15 +371,22 @@ AlivcLivePusherSnapshotDelegate;
  */
 - (int)setBeautyRuddy:(int)value;
 
-
 /**
- 设置美颜 瘦脸程度
-
- @param value 瘦脸度 范围 0~100
+ 设置美颜 腮红度
+ 
+ @param value 腮红度 范围 0~100
  @return 0:success  非0:failure
  */
 - (int)setBeautyCheekPink:(int)value;
 
+
+/**
+ 设置美颜 瘦脸程度
+ 
+ @param value 瘦脸度 范围 0~100
+ @return 0:success  非0:failure
+ */
+- (int)setBeautyThinFace:(int)value;
 
 /**
  设置美颜 收下巴程度
@@ -388,20 +394,10 @@ AlivcLivePusherSnapshotDelegate;
  @param value 腮红度 范围 0~100
  @return 0:success  非0:failure
  */
-- (int)setBeautyThinFace:(int)value;
-
+- (int)setBeautyShortenFace:(int)value;
 
 /**
  设置美颜 大眼程度
- 
- @param value 腮红度 范围 0~100
- @return 0:success  非0:failure
- */
-- (int)setBeautyShortenFace:(int)value;
-
-
-/**
- 设置美颜 腮红度
  
  @param value 腮红度 范围 0~100
  @return 0:success  非0:failure
@@ -817,6 +813,13 @@ AlivcLivePusherSnapshotDelegate;
  @param pusher 推流AlivcLivePusher
  */
 - (void)onSendSeiMessage:(AlivcLivePusher *)pusher;
+
+/**
+ 网络原因导致音视频丢包
+ 
+ @param pusher 推流AlivcLivePusher
+ */
+- (void)onPacketsLost:(AlivcLivePusher *)pusher;
 
 
 @end

@@ -31,8 +31,9 @@
  @param manager AlivcIMManager
  @param imHost imHost
  @param clientId clientId
+ @param message message
  */
-- (void)onNotifyConnectFail:(AlivcIMManager *)manager imHost:(NSString *)imHost clientId:(NSString *)clientId;
+- (void)onNotifyConnectFail:(AlivcIMManager *)manager imHost:(NSString *)imHost clientId:(NSString *)clientId message:(NSString *)message;
 
 /**
  token upload success notify

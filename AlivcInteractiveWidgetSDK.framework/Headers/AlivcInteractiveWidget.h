@@ -45,15 +45,12 @@ typedef NS_ENUM(NSInteger,AlivcMessagePriority) {
 
 @interface AlivcInteractiveWidgetStatistics : NSObject
 
-/**
- 总点赞数
- */
-@property(nonatomic, assign) int totalLikeCount;
-
-/**
- 总消息数
- */
-@property(nonatomic, assign) int totalChatCount;
+@property (nonatomic, assign)BOOL isImConnected;
+@property (nonatomic, assign)NSUInteger totalSendMsgCount;
+@property (nonatomic, assign)NSUInteger totalSendLikeCount;
+@property (nonatomic, assign)NSUInteger totalReceiveMsgCount;
+@property (nonatomic, assign)NSUInteger totalReceiveLikeCount;
+@property (nonatomic, assign)NSUInteger totalSendMsgErrorCount;
 
 @end
 
@@ -123,8 +120,9 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param roomId 房间ID
  @param userId 用户ID
+ @param archorId 主播ID
  */
-- (void)setRoomId:(NSString *)roomId userId:(NSString *)userId;
+- (void)setRoomId:(NSString *)roomId userId:(NSString *)userId archorId:(NSString *)archorId;
 
 
 /**

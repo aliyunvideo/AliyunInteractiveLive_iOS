@@ -32,7 +32,7 @@
 /**
  用户被踢出房间通知
  */
-- (void)onAlivcRoomKickOutUserId:(NSString *)userId;
+- (void)onAlivcRoomKickOutUserId:(NSString *)userId userData:(NSString *)userData;
 
 /**
  主播被禁播通知

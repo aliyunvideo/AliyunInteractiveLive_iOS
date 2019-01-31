@@ -35,7 +35,36 @@ typedef NS_ENUM(NSInteger, AlivcLiveEvents){
     AlivcLiveEventPlayUrlExpired = 2075,
     AlivcLiveEventPushNetworkRecovery = 2076,
     AlivcLiveEventPushRtmpConnectionLost = 2081,
+    AlivcLiveEventCallEnter = 2082,
+    AlivcLiveEventCallQuit = 2083,
+    AlivcLiveEventAppEnterBackground = 2084,
+    AlivcLiveEventAppEnterForeground = 2085,
+    AlivcLiveEventReceiveChatMessge = 2088,
+    AlivcLiveEventReceiveCustomMessge = 2089,
 };
+
+
+@interface AlivcLiveEventHeartbeatParams : NSObject
+
+@property (nonatomic, assign)BOOL isLive;
+@property (nonatomic, assign)BOOL isForbidden;
+@property (nonatomic, copy)NSString *imTokenExpiredTime;
+@property (nonatomic, copy)NSString *stsTokenExpiredTime;
+@property (nonatomic, copy)NSString *urlExpiredTime;
+@property (nonatomic, assign)BOOL isImConnected;
+@property (nonatomic, assign)NSUInteger streamState;
+@property (nonatomic, assign)NSUInteger totalSendMsgCount;
+@property (nonatomic, assign)NSUInteger totalSendLikeCount;
+@property (nonatomic, assign)NSUInteger totalReceiveMsgCount;
+@property (nonatomic, assign)NSUInteger totalReceiveLikeCount;
+@property (nonatomic, assign)NSUInteger totalReceiveCustomCount;
+@property (nonatomic, assign)NSUInteger totalReconnectCount;
+@property (nonatomic, assign)NSUInteger totalImRefreshCount;
+@property (nonatomic, assign)NSUInteger totalStsRefreshCount;
+@property (nonatomic, assign)NSUInteger totalUrlRefreshCount;
+@property (nonatomic, assign)NSUInteger totalSendMsgErrorCount;
+
+@end
 
 
 @interface AlivcLiveEvent : NSObject
@@ -352,6 +381,12 @@ typedef NS_ENUM(NSInteger, AlivcLiveEvents){
 /**
  周期性事件
  */
-- (void)sendEventHeartBeats:(NSMutableDictionary *)params;
+- (void)sendEventHeartBeats:(AlivcLiveEventHeartbeatParams *)params;
+
+/**
+ 接受消息事件
+ */
+- (void)sendEventReceiveMessage:(AlivcLiveEvents)event messageId:(NSString *)messageId;
+
 
 @end

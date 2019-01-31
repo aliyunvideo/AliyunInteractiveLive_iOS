@@ -35,10 +35,15 @@
 #endif
 
 @interface AlivcLiveRoomStatistics : NSObject
-/**
- 总自定义通知数
- */
-@property(nonatomic, assign) int totalUdfMessageCount;
+
+@property (nonatomic, assign)BOOL isLive;
+@property (nonatomic, assign)BOOL isForbidden;
+@property (nonatomic, assign)NSUInteger streamState;
+@property (nonatomic, copy)NSString *urlExpiredTime;
+@property (nonatomic, assign)NSUInteger totalReceiveCustomCount;
+@property (nonatomic, assign)NSUInteger totalReconnectCount;
+@property (nonatomic, assign)NSUInteger totalImRefreshCount;
+@property (nonatomic, assign)NSUInteger totalUrlRefreshCount;
 
 @end
 

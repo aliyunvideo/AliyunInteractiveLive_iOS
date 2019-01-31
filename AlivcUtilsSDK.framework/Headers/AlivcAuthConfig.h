@@ -10,7 +10,7 @@
 
 @interface AlivcAuthConfig : NSObject
 
-// 设置token过期之前多少毫秒触发通知，默认60000毫秒
+// 设置token过期之前多少毫秒触发通知，默认180秒
 @property (nonatomic, assign)NSUInteger notifyIntervalBeforeExpired;
 
 @end
